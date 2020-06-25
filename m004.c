@@ -28,7 +28,8 @@
    right before the spurious character (eg. truncate 110x001
    into 110); an empty string means zero. */
 
-  float MyPow (int a, int b){
+  float MyPow (int a, int b)
+  {
   if (b<0)
     return (1.0/a)*(MyPow(a,b+1));
      else
