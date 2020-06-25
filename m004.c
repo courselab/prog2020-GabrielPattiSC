@@ -41,7 +41,8 @@
      else
        return a*MyPow(a,b-1);
        }
-  int decimal (char *b) {
+  int decimal (char *b) 
+  {
   int i;
   int mult;
   int acc=0;
