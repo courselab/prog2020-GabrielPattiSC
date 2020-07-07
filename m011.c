@@ -27,11 +27,12 @@
 /* Return the number of words in ascii text file 'filename'.*/
 
 int wordcount (char *filename)
-{ FILE *fn;
+{
+  FILE *fn;
   int i;
   int j=0;
   int k=0;
-  fn=fopen(filename, "x");
+  fn=fopen(filename, "r");
 
 
   while ((i=fgetc(fn))!=EOF)
@@ -42,9 +43,13 @@ int wordcount (char *filename)
 
 
   }
-  else{if(k==1 && i!=32){
+  else{
+    if(k==1 && i!=32)
+  {
     k=0;
-  }}} 
+  }
+  }
+  }
 
   return j;
 }
