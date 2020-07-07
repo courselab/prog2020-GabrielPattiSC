@@ -29,9 +29,55 @@ enum {sun, mon, tue, wed, thu, fri, sat};
    Sunday=0, Monday=1... Saturday=6.*/
 
 int day_of_week (int day, int month)
-{
-  return sun;
+{{ int data [13];
+*data = 0;
+
+*(data +1) = 31;
+
+
+*(data +2) = 29;
+
+
+*(data +3) = 31;
+
+
+*(data +4) = 30;
+
+
+*(data +5) = 31;
+
+
+*(data +6) = 30;
+
+
+*(data +7) = 31;
+
+
+*(data +8) = 31;
+
+
+*(data +9) = 30;
+
+
+*(data +10) = 31;
+
+
+*(data +11) = 30;
+
+
+*(data +12) = 31;
+int x, z , y;
+z=3;
+
+for (x=0 ; x<month; x++)
+z = z + data[x];
+z=z+day - 1;
+y = (z%7);
+return y;
 }
+
+ 
+
 
 /* Do not edit function main. */
 
