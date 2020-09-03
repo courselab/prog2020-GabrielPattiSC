@@ -23,8 +23,17 @@
 /* Return the greatest among a, b and c. */
 
 int greatest (int a, int b, int c)
-{
-  return a;
+{ int x;
+x=a;
+
+if (b>=x)
+{x=b;}
+
+if (c>=x)
+{x=c;}
+
+
+  return x;
 }
 
 /* Do not edit this function. */

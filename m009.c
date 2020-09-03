@@ -24,7 +24,17 @@
 /* Sort the first 'n' integers values in 'vector'. */
 
 void sort (int* vector, int n)
-{
+{ int a,b,c; 
+a=1;
+
+while (a<n) { c=vector [a];
+b = a - 1;
+while (( b>=0) && (vector [b]>c)){ 
+  vector [b + 1 ] = vector [b];
+  b = b - 1;
+}
+vector [b+1]=c;
+a = a + 1;}
 }
 
 #define USAGE "m009 <num1> <nun2> ... \n"

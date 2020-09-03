@@ -20,6 +20,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 
 /* Return the value in decimal base of the string b, interpreted
    as the a positive binary number. If the string contains any
@@ -27,12 +28,35 @@
    right before the spurious character (eg. truncate 110x001
    into 110); an empty string means zero. */
 
-int decimal (char *b)
-{
+  float MyPow (int a, int b)
+  {
+  if (b<0)
+    return (1.0/a)*(MyPow(a,b+1));
+     else
+     if (b==0)
+     return 1;
+     else
+     if (b==1)
+     return a;
+     else
+       return a*MyPow(a,b-1);
+       }
+  int decimal (char *b) 
+  {
+  int i;
+  int mult;
+  int acc=0;
+  for (i= strlen(b) - 1, mult = 0; i>=0; i--, mult++) {
   
-  return 0;
-}
 
+      if (b[i]=='1') {
+   
+      acc = acc + MyPow(2,mult);
+     }
+     }
+
+     return acc;
+}
 #define USAGE "m004 <string>\n"
 
 /* Do not edit this function. */
@@ -53,3 +77,4 @@ int main (int argc, char **argv)
   
   return 0;
 }
+ 

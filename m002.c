@@ -25,9 +25,59 @@
 
 /* Sort three integers x, y, z in ascending order.*/
 
-void sort (int *a, int *b, int *c)
+ void sort (int *a, int *b, int *c)
 {
+   int Q;
+ 
+ if (*a<=*b  &&  *a<=*c)
+ {
+ if (*b<=*c)
+ {}
+
+ else{ 
+ Q = *b;
+ *b = *c;
+ *c = Q;
+ }
+ } 
+ if (*b<=*a && *b<=*c)
+ {
+ if (*a<=*c){
+    Q = *a;
+    *a = *b;
+    *b = Q;
+  } else{
+     Q = *a;
+     *a = *b;
+     *b = Q;
+     Q = *c;
+     *c = *b;
+     *b = Q;
+      } 
+ }
+
+ if (*c<=*a && *c<=*b)
+ {
+  if (*a<=*b){
+    Q = *a;
+    *a = *c;
+    *c = Q;
+    Q = *c;
+    *c = *b;
+    *b = Q;
+  }
+
+  else { 
+    Q = *a;
+    *a = *c;
+    *c = Q;
+    }
+
+
 }
+}
+
+
 
 /* Do not edit this function. */
 
